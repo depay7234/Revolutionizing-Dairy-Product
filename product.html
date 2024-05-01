@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Revolutionizing Dairy Product</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Open+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        role="status"
+        style="width: 3rem; height: 3rem"
+      ></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav
+      class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5"
+    >
+      <a href="index.html" class="navbar-brand d-flex align-items-center">
+        <h1 class="m-0">Revolutionizing Dairy Product</h1>
+      </a>
+      <button
+        type="button"
+        class="navbar-toggler me-0"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+          <a href="index.html" class="nav-item nav-link">Home</a>
+          <a href="product.html" class="nav-item nav-link active">Products</a>
+          <a href="contact.html" class="nav-item nav-link">Upload Products</a>
+        </div>
+        <div class="border-start ps-4 d-none d-lg-block">
+          <button
+            type="button"
+            class="btn btn-sm p-0"
+            data-bs-toggle="modal"
+            data-bs-target="#cartModal"
+          >
+            <i class="fa fa-cart-plus"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Product Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div
+          class="text-center mx-auto wow fadeInUp"
+          data-wow-delay="0.1s"
+          style="max-width: 500px"
+        >
+          <p class="section-title bg-white text-center text-primary px-3">
+            Our Products
+          </p>
+          <h1 class="mb-5">Search and have list of uploaded products here!</h1>
+        </div>
+        <div class="row gx-4" id="addingfield">
+  
+        </div>
+      </div>
+    </div>
+    <!-- Product End -->
+
+    <!-- Cart Modal -->
+    <div
+      class="modal fade"
+      id="cartModal"
+      tabindex="-1"
+      aria-labelledby="cartModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cartModalLabel">Transaction</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="transactionForm">
+              <input type="text" class="form-control d-none" id="mongodbid" />
+              <input
+                type="text"
+                class="form-control d-none"
+                id="tempimageurl"
+              />
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"
+                  >owner address</label
+                >
+                <input type="text" class="form-control" id="ownerraddress" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Price</label
+                >
+                <input type="number" class="form-control" id="productprice" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"
+                  >family seed</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="familyseed"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="proceedwithPaymentID"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+    <!-- Features End -->
+    <div class="col-lg-3 col-md-6">
+      <!-- <h5 class="text-white mb-4">Newsletter</h5> -->
+      <p>Enter raddress to see item you bought</p>
+      <div class="position-relative w-100">
+        <input
+          class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
+          type="text"
+          placeholder="r-address"
+          id="placeholderforraddress"
+        />
+        <button
+          type="button"
+          id="viewitembought"
+          class="btn btn-secondary py-2 position-absolute top-0 end-0 mt-2 me-2"
+        >
+          search
+        </button>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div
+          class="text-center mx-auto wow fadeInUp"
+          data-wow-delay="0.1s"
+          style="max-width: 500px"
+        >
+          <p class="section-title bg-white text-center text-primary px-3">
+            your Products
+          </p>
+          <h1 class="mb-5">See the Products you have bought.</h1>
+        </div>
+        <div class="row gx-4" id="displayingallMyitem">
+          <div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  <!-- Footer Start -->
+  <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-white mb-4">Our location</h5>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>GCIT, Thimphu, Bhutan</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>73646373</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>gcit@gmail.com</p>
+                <div class="d-flex pt-3">
+                    <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-square btn-secondary rounded-circle me-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/parallax/parallax.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="./js/product.js"></script>
+  </body>
+</html>
